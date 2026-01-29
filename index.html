@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sulaf.PDF - روايات فانتازيا</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-storage-compat.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <i class="fas fa-book-open"></i>
+            <span>Sulaf.PDF</span>
+        </div>
+        
+        <nav class="nav-links">
+            <a href="index.html" class="active">الرئيسية</a>
+            <a href="#novels">الروايات</a>
+            <a href="#categories">التصنيفات</a>
+            <a href="#ai">الذكاء الاصطناعي</a>
+            <a href="dashboard.html">حسابي</a>
+        </nav>
+        
+        <div class="user-actions" id="userActions">
+            <!-- سيتم تحميلها ديناميكيًا -->
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>عالم الفانتازيا بين يديك</h1>
+            <p>أكبر مكتبة عربية لروايات الفانتازيا - اقرأ، حمّل، وانشر رواياتك</p>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="ابحث عن رواية أو كاتب...">
+                <button id="searchBtn"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Novels -->
+    <section class="section" id="novels">
+        <h2 class="section-title">الروايات المميزة</h2>
+        <div class="novels-grid" id="featuredNovels">
+            <!-- سيتم تحميل الروايات من Firebase -->
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="section" id="categories">
+        <h2 class="section-title">تصنيفات الروايات</h2>
+        <div class="categories-grid">
+            <div class="category-card" onclick="filterNovels('فانتازيا')">
+                <i class="fas fa-dragon"></i>
+                <h3>فانتازيا</h3>
+            </div>
+            <div class="category-card" onclick="filterNovels('مغامرة')">
+                <i class="fas fa-compass"></i>
+                <h3>مغامرة</h3>
+            </div>
+            <div class="category-card" onclick="filterNovels('رومانسي')">
+                <i class="fas fa-heart"></i>
+                <h3>رومانسي</h3>
+            </div>
+            <div class="category-card" onclick="filterNovels('خيال علمي')">
+                <i class="fas fa-rocket"></i>
+                <h3>خيال علمي</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Assistant -->
+    <section class="section ai-section" id="ai">
+        <h2 class="section-title">مساعد الذكاء الاصطناعي</h2>
+        <div class="ai-container">
+            <div class="ai-chat">
+                <div class="chat-messages" id="chatMessages">
+                    <div class="message ai-message">
+                        <p>مرحباً! أنا مساعدك للذكاء الاصطناعي. كيف يمكنني مساعدتك في كتابة رواية فانتازيا؟</p>
+                    </div>
+                </div>
+                <div class="chat-input">
+                    <input type="text" id="aiInput" placeholder="اكتب رسالتك...">
+                    <button id="sendAiMsg"><i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Sulaf.PDF</h3>
+                <p>أكبر مكتبة روايات فانتازيا عربية</p>
+            </div>
+            <div class="footer-section">
+                <h3>روابط سريعة</h3>
+                <a href="index.html">الرئيسية</a>
+                <a href="#novels">الروايات</a>
+                <a href="dashboard.html">حسابي</a>
+                <a href="admin.html">لوحة التحكم</a>
+            </div>
+            <div class="footer-section">
+                <h3>اتصل بنا</h3>
+                <p><i class="fab fa-whatsapp"></i>+96396061988 / للشراء</p>
+                <p><i class="fas fa-envelope"></i> support@sulaf.pdf</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Sulaf.PDF - جميع الحقوق محفوظة | Adlep X @xlb_me</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="js/firebase-config.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/database.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
